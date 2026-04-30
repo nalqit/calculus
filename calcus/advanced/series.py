@@ -35,7 +35,7 @@ def taylor_series(
         NotImplementedError: If a derivative cannot be computed.
 
     Examples:
-        >>> from calculus import parse, taylor_series, pretty
+        >>> from calcus import parse, taylor_series, pretty
         >>> pretty(taylor_series(parse("exp(x)"), "x", order=5))
         '1 + x + x ^ 2 / 2 + x ^ 3 / 6 + x ^ 4 / 24'
     """
@@ -78,7 +78,7 @@ def maclaurin_series(expr: Expr, var: str, order: int = 5) -> Expr:
         A polynomial expression approximating the function near x=0.
 
     Examples:
-        >>> from calculus import parse, maclaurin_series, pretty
+        >>> from calcus import parse, maclaurin_series, pretty
         >>> pretty(maclaurin_series(parse("sin(x)"), "x", order=6))
         'x - x ^ 3 / 6 + x ^ 5 / 120'
     """

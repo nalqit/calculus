@@ -45,7 +45,7 @@ def simplify(expr: Expr) -> Expr:
         A simplified expression. May be equal to ``expr`` if no simplifications apply.
 
     Examples:
-        >>> from calculus import parse, simplify, pretty
+        >>> from calcus import parse, simplify, pretty
         >>> pretty(simplify(parse("x + 0")))
         'x'
         >>> pretty(simplify(parse("x * 1")))

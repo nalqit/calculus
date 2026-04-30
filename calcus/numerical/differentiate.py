@@ -31,7 +31,7 @@ def numerical_diff(
         ValueError: If an unknown method is specified.
 
     Examples:
-        >>> from calculus import parse, numerical_diff
+        >>> from calcus import parse, numerical_diff
         >>> abs(numerical_diff(parse("x^2"), "x", 2) - 4) < 1e-5
         True
         >>> abs(numerical_diff(parse("sin(x)"), "x", 0) - 1) < 1e-5
@@ -65,7 +65,7 @@ def numerical_diff2(
         Approximate second derivative value.
 
     Examples:
-        >>> from calculus import parse, numerical_diff2
+        >>> from calcus import parse, numerical_diff2
         >>> abs(numerical_diff2(parse("x^3"), "x", 2) - 12) < 1e-3
         True
     """

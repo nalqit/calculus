@@ -3,14 +3,14 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "calculus"
+name = "calcus"
 version = "0.1.0"
 description = "A from-scratch Python library for symbolic and numerical calculus operations"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [
-    {name = "Calculus Library Contributors"},
+    {name = "Calcus Library Contributors"},
 ]
 keywords = ["calculus", "symbolic", "differentiation", "integration", "mathematics"]
 classifiers = [
@@ -25,16 +25,22 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
 ]
 
+[project.scripts]
+calcus = "calcus.__main__:main"
+
 [project.optional-dependencies]
 dev = ["pytest>=7.0", "pytest-cov", "ruff"]
-numpy = ["numpy>=1.24"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["calcus*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--cov=calculus --cov-report=term-missing --cov-report=html"
+addopts = "--cov=calcus --cov-report=term-missing --cov-report=html"
 
 [tool.coverage.run]
-source = ["calculus"]
+source = ["calcus"]
 omit = ["tests/*"]
 
 [tool.coverage.report]

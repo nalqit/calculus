@@ -1,4 +1,4 @@
-# Contributing to Calculus
+# Contributing to calcus
 
 Thank you for your interest in contributing! This guide will help you get started.
 
@@ -6,8 +6,8 @@ Thank you for your interest in contributing! This guide will help you get starte
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/calculus.git
-cd calculus
+git clone https://github.com/YOUR_USERNAME/calcus.git
+cd calcus
 
 # Create a virtual environment
 python -m venv .venv
@@ -24,11 +24,11 @@ pip install -e ".[dev]"
 pytest tests -v
 
 # Run with coverage
-pytest tests -v --cov=calculus
+pytest tests -v --cov=calcus
 
 # Run a specific test file or class
-pytest tests/test_calculus.py -v
-pytest tests/test_calculus.py::TestDifferentiation -v
+pytest tests/test_calcus.py -v
+pytest tests/test_calcus.py::TestDifferentiation -v
 ```
 
 ## Code Style
@@ -57,7 +57,7 @@ ruff format .
 
 ## What to Contribute
 
-- **Bug fixes**: Fix issues reported in the [issue tracker](https://github.com/YOUR_USERNAME/calculus/issues)
+- **Bug fixes**: Fix issues reported in the [issue tracker](https://github.com/YOUR_USERNAME/calcus/issues)
 - **New functions**: Add support for more mathematical functions (e.g., `sinh`, `cosh`, `log10`)
 - **Better integration**: Expand the symbolic integration engine with more patterns
 - **Better simplification**: Add trig identity simplification, polynomial factoring
@@ -68,8 +68,8 @@ ruff format .
 ## Project Structure
 
 ```
-calculus/
-├── calculus/              # The Python package
+calcus/
+├── calcus/              # The Python package
 │   ├── __init__.py        # Public API
 │   ├── __main__.py        # CLI entry point
 │   ├── core/              # Expression system
@@ -77,7 +77,7 @@ calculus/
 │   │   ├── parser.py      # String → AST
 │   │   ├── simplify.py    # Simplification rules
 │   │   └── pretty.py      # Output formatting
-│   ├── symbolic/          # Symbolic calculus
+│   ├── symbolic/          # Symbolic calcus
 │   │   ├── differentiate.py
 │   │   ├── integrate.py
 │   │   └── limits.py
@@ -89,7 +89,7 @@ calculus/
 │       ├── ode.py
 │       └── vector.py
 ├── tests/                 # Unit tests
-│   └── test_calculus.py
+│   └── test_calcus.py
 ├── pyproject.toml
 ├── README.md
 └── LICENSE
@@ -141,8 +141,8 @@ if isinstance(expr, Sinh):
 
 4. **Add formatting** in `core/pretty.py` (both `pretty` and `to_latex`)
 
-5. **Write tests** in `tests/test_calculus.py`
+5. **Write tests** in `tests/test_calcus.py`
 
 ## Questions?
 
-Open an [issue](https://github.com/YOUR_USERNAME/calculus/issues) for questions or discussions.
+Open an [issue](https://github.com/YOUR_USERNAME/calcus/issues) for questions or discussions.

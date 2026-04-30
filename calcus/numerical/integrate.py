@@ -24,7 +24,7 @@ def trapezoidal_rule(
         Approximate integral value.
 
     Examples:
-        >>> from calculus import parse, trapezoidal_rule
+        >>> from calcus import parse, trapezoidal_rule
         >>> abs(trapezoidal_rule(parse("x^2"), "x", 0, 1, n=10000) - 1/3) < 1e-4
         True
     """
@@ -56,7 +56,7 @@ def simpsons_rule(
         Approximate integral value.
 
     Examples:
-        >>> from calculus import parse, simpsons_rule
+        >>> from calcus import parse, simpsons_rule
         >>> abs(simpsons_rule(parse("x^2"), "x", 0, 1) - 1/3) < 1e-10
         True
     """
@@ -105,7 +105,7 @@ def adaptive_quadrature(
         Approximate integral value with error below ``tol``.
 
     Examples:
-        >>> from calculus import parse, adaptive_quadrature
+        >>> from calcus import parse, adaptive_quadrature
         >>> abs(adaptive_quadrature(parse("sin(x)"), "x", 0, 3.14159265) - 2) < 1e-8
         True
     """
@@ -157,7 +157,7 @@ def gaussian_quadrature(
         ValueError: If n is not between 1 and 5.
 
     Examples:
-        >>> from calculus import parse, gaussian_quadrature
+        >>> from calcus import parse, gaussian_quadrature
         >>> abs(gaussian_quadrature(parse("x^2"), "x", 0, 1, n=3) - 1/3) < 1e-10
         True
     """

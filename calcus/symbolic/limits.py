@@ -47,7 +47,7 @@ def limit(
         ValueError: If the limit does not exist or cannot be computed.
 
     Examples:
-        >>> from calculus import parse, limit
+        >>> from calcus import parse, limit
         >>> limit(parse("x^2 + 1"), "x", 3)
         10.0
         >>> abs(limit(parse("sin(x)/x"), "x", 0) - 1) < 1e-6

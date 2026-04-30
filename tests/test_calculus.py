@@ -1,4 +1,4 @@
-from calculus import (
+from calcus import (
     Add,
     Constant,
     Mul,

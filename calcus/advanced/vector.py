@@ -19,7 +19,7 @@ def gradient(scalar_field: Expr, variables: list[str]) -> list[Expr]:
         List of partial derivative expressions.
 
     Examples:
-        >>> from calculus import parse, gradient, pretty
+        >>> from calcus import parse, gradient, pretty
         >>> grad = gradient(parse("x^2 + y^2 + z^2"), ["x", "y", "z"])
         >>> [pretty(g) for g in grad]
         ['2 * x', '2 * y', '2 * z']
@@ -45,7 +45,7 @@ def divergence(vector_field: list[Expr], variables: list[str]) -> Expr:
         ValueError: If the vector field length doesn't match the number of variables.
 
     Examples:
-        >>> from calculus import parse, divergence, pretty
+        >>> from calcus import parse, divergence, pretty
         >>> div = divergence([parse("x^2"), parse("y^2")], ["x", "y"])
         >>> pretty(div)
         '2 * x + 2 * y'
@@ -82,7 +82,7 @@ def curl(
         ValueError: If the vector field does not have exactly 3 components.
 
     Examples:
-        >>> from calculus import parse, curl, pretty
+        >>> from calcus import parse, curl, pretty
         >>> curl([parse("y"), parse("-x"), parse("0")], ["x", "y", "z"])
         [0, 0, -2]
     """
@@ -114,7 +114,7 @@ def laplacian(scalar_field: Expr, variables: list[str]) -> Expr:
         The Laplacian expression.
 
     Examples:
-        >>> from calculus import parse, laplacian, pretty
+        >>> from calcus import parse, laplacian, pretty
         >>> laplacian(parse("x^2 + y^2"), ["x", "y"])
         4
     """

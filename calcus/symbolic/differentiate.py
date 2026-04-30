@@ -48,7 +48,7 @@ def differentiate(expr: Expr, var: str, order: int = 1) -> Expr:
         TypeError: If the expression type is not supported.
 
     Examples:
-        >>> from calculus import parse, differentiate, pretty
+        >>> from calcus import parse, differentiate, pretty
         >>> pretty(differentiate(parse("x^3"), "x"))
         '3 * x ^ 2'
         >>> pretty(differentiate(parse("sin(x)"), "x"))
@@ -220,7 +220,7 @@ def partial_derivative(expr: Expr, var: str, order: int = 1) -> Expr:
         The simplified partial derivative expression.
 
     Examples:
-        >>> from calculus import parse, partial_derivative, pretty
+        >>> from calcus import parse, partial_derivative, pretty
         >>> expr = parse("x^2 * y + y^3")
         >>> pretty(partial_derivative(expr, "x"))
         '2 * x * y'
@@ -244,7 +244,7 @@ def gradient(expr: Expr, variables: list[str]) -> list[Expr]:
         A list of expressions, one partial derivative per variable.
 
     Examples:
-        >>> from calculus import parse, gradient, pretty
+        >>> from calcus import parse, gradient, pretty
         >>> grad = gradient(parse("x^2 + y^2"), ["x", "y"])
         >>> [pretty(g) for g in grad]
         ['2 * x', '2 * y']
@@ -266,7 +266,7 @@ def hessian(expr: Expr, variables: list[str]) -> list[list[Expr]]:
         A 2D list (n x n) of second derivative expressions.
 
     Examples:
-        >>> from calculus import parse, hessian, pretty
+        >>> from calcus import parse, hessian, pretty
         >>> h = hessian(parse("x^2 * y"), ["x", "y"])
         >>> [[pretty(h[i][j]) for j in range(2)] for i in range(2)]
         [['2 * y', '2 * x'], ['2 * x', '0']]

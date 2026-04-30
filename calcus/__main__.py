@@ -1,7 +1,7 @@
 """Command-line interface for the calculus library.
 
 Usage:
-    python -m calculus [OPTIONS]
+    python -m calcus [OPTIONS]
 
 Options:
     --diff EXPR           Compute the symbolic derivative of EXPR
@@ -24,16 +24,16 @@ from __future__ import annotations
 import argparse
 import sys
 
-from calculus.core.parser import ParseError
-from calculus.core.pretty import pretty, to_latex
-from calculus.symbolic.differentiate import differentiate
-from calculus.symbolic.integrate import integrate
-from calculus.symbolic.limits import limit
+from .core.parser import ParseError
+from .core.pretty import pretty, to_latex
+from .symbolic.differentiate import differentiate
+from .symbolic.integrate import integrate
+from .symbolic.limits import limit
 
 
 def _parse_expr(source: str):
     """Parse an expression string, printing a helpful error on failure."""
-    from calculus import parse
+    from . import parse
 
     try:
         return parse(source)
@@ -78,7 +78,7 @@ def cmd_limit(args: argparse.Namespace) -> None:
 
 def cmd_taylor(args: argparse.Namespace) -> None:
     """Handle the --taylor command."""
-    from calculus import maclaurin_series, taylor_series
+    from . import maclaurin_series, taylor_series
 
     expr = _parse_expr(args.taylor)
     if args.point == 0:
@@ -91,7 +91,7 @@ def cmd_taylor(args: argparse.Namespace) -> None:
 
 def cmd_num_diff(args: argparse.Namespace) -> None:
     """Handle the --num-diff command."""
-    from calculus import numerical_diff
+    from . import numerical_diff
 
     expr = _parse_expr(args.num_diff)
     result = numerical_diff(expr, args.var, args.point)
@@ -100,7 +100,7 @@ def cmd_num_diff(args: argparse.Namespace) -> None:
 
 def cmd_num_int(args: argparse.Namespace) -> None:
     """Handle the --num-int command."""
-    from calculus import adaptive_quadrature
+    from . import adaptive_quadrature
 
     expr = _parse_expr(args.num_int)
     result = adaptive_quadrature(expr, args.var, args.lower, args.upper)
@@ -109,8 +109,8 @@ def cmd_num_int(args: argparse.Namespace) -> None:
 
 def run_repl() -> None:
     """Run an interactive REPL for calculus operations."""
-    from calculus import parse as calc_parse
-    from calculus import (
+    from . import parse as calc_parse
+    from . import (
         adaptive_quadrature,
         differentiate,
         integrate,
@@ -119,7 +119,7 @@ def run_repl() -> None:
         numerical_diff,
     )
 
-    print("Calculus REPL")
+    print("Calcus REPL")
     print("Commands:")
     print("  diff  <expr> [var] [order]  - Differentiate")
     print("  int   <expr> [var]          - Integrate")
@@ -134,7 +134,7 @@ def run_repl() -> None:
 
     while True:
         try:
-            line = input("calculus> ").strip()
+            line = input("calcus> ").strip()
         except (EOFError, KeyboardInterrupt):
             print()
             break
@@ -234,14 +234,14 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python -m calculus --diff "x^2 + sin(x)" --var x
-  python -m calculus --integrate "cos(x)" --var x
-  python -m calculus --limit "sin(x)/x" --var x --point 0
-  python -m calculus --taylor "exp(x)" --var x --order 5
-  python -m calculus --num-diff "x^2" --var x --point 2
-  python -m calculus --num-int "x^2" --var x --lower 0 --upper 1
-  python -m calculus --diff "x^3" --var x --latex
-  python -m calculus --repl
+  python -m calcus --diff "x^2 + sin(x)" --var x
+  python -m calcus --integrate "cos(x)" --var x
+  python -m calcus --limit "sin(x)/x" --var x --point 0
+  python -m calcus --taylor "exp(x)" --var x --order 5
+  python -m calcus --num-diff "x^2" --var x --point 2
+  python -m calcus --num-int "x^2" --var x --lower 0 --upper 1
+  python -m calcus --diff "x^3" --var x --latex
+  python -m calcus --repl
 """,
     )
 

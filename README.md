@@ -1,30 +1,38 @@
-# Calculus
+# Calcus
 
-A from-scratch Python library for symbolic and numerical calculus operations. No dependencies on SymPy, NumPy, or any external math library.
+[![PyPI version](https://img.shields.io/pypi/v/calcus.svg)](https://pypi.org/project/calcus/)
+[![Python versions](https://img.shields.io/pypi/pyversions/calcus.svg)](https://pypi.org/project/calcus/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://github.com/YOUR_USERNAME/calcus/actions/workflows/tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/calcus/actions/workflows/tests.yml)
 
-## Features
+A lightweight, dependency-free Python library for symbolic and numerical calculus operations.
 
-| Category | Operations |
-|----------|-----------|
-| **Symbolic Differentiation** | Power, product, quotient, chain rules, higher-order derivatives, partial derivatives |
-| **Symbolic Integration** | Power rule, trig functions, exponential, logarithmic, integration by parts |
-| **Limits** | Direct substitution, L'Hôpital's rule, limits at infinity |
-| **Numerical Differentiation** | Forward, backward, central finite differences, second derivatives |
-| **Numerical Integration** | Trapezoidal rule, Simpson's rule, adaptive quadrature, Gaussian quadrature |
-| **Series Expansion** | Taylor series, Maclaurin series |
-| **Vector Calculus** | Gradient, divergence, curl, Laplacian |
-| **ODE Solvers** | Euler's method, 4th-order Runge-Kutta |
+## Why Calcus?
+
+- **Zero dependencies** — no SymPy, NumPy, or any external math library required
+- **Educational** — transparent implementation of calculus algorithms you can study and modify
+- **Simple API** — intuitive functions that do exactly what you expect
+- **Lightweight** — no heavy symbolic engine overhead, fast imports, minimal footprint
+- **Both symbolic and numerical** — get exact answers when possible, approximations when needed
 
 ## Installation
 
-### From source
+### From PyPI
+
 ```bash
-git clone <repo-url>
-cd calculus
+pip install calcus
+```
+
+### From source
+
+```bash
+git clone https://github.com/YOUR_USERNAME/calcus.git
+cd calcus
 pip install -e .
 ```
 
 ### Development install (with pytest)
+
 ```bash
 pip install -e ".[dev]"
 ```
@@ -32,7 +40,7 @@ pip install -e ".[dev]"
 ## Quick Start
 
 ```python
-from calculus import parse, differentiate, integrate, limit, pretty
+from calcus import parse, differentiate, integrate, limit, pretty
 
 # Parse an expression from a string
 expr = parse("x^2 + sin(x)")
@@ -50,12 +58,39 @@ lim = limit(parse("sin(x)/x"), "x", 0)
 print(lim)  # 1.0
 ```
 
+## CLI Usage
+
+Calcus ships with a command-line interface:
+
+```bash
+# Symbolic differentiation
+calcus --diff "x^2 + sin(x)" --var x
+
+# Symbolic integration
+calcus --integrate "sin(x)" --var x
+
+# Limits
+calcus --limit "sin(x)/x" --var x --point 0
+
+# Taylor series
+calcus --taylor "exp(x)" --var x --order 5
+
+# Numerical integration
+calcus --num-int "x^2" --var x --lower 0 --upper 1
+
+# LaTeX output
+calcus --diff "x^3" --var x --latex
+
+# Interactive REPL
+calcus --repl
+```
+
 ## API Reference
 
 ### Parsing
 
 ```python
-from calculus import parse
+from calcus import parse
 
 expr = parse("x^2 + 2*x + 1")        # Addition and multiplication
 expr = parse("sin(x) * cos(x)")      # Functions
@@ -69,7 +104,7 @@ expr = parse("atan(x^2)")            # Inverse trig functions
 ### Symbolic Differentiation
 
 ```python
-from calculus import parse, differentiate, gradient, hessian
+from calcus import parse, differentiate, gradient, hessian
 
 # Basic derivatives
 differentiate(parse("x^3"), "x")               # 3 * x ^ 2
@@ -99,7 +134,7 @@ hessian(expr, ["x", "y"])                      # [[2 * y, 2 * x], [2 * x, 6 * y]
 ### Symbolic Integration
 
 ```python
-from calculus import parse, integrate, definite_integral
+from calcus import parse, integrate, definite_integral
 
 # Basic antiderivatives
 integrate(parse("x^2"), "x")                   # x ^ 3 / 3
@@ -116,7 +151,7 @@ definite_integral(parse("sin(x)"), "x", 0, 3.14159)  # ~2.0
 ### Limits
 
 ```python
-from calculus import parse, limit
+from calcus import parse, limit
 
 # Direct substitution
 limit(parse("x^2 + 1"), "x", 3)                # 10.0
@@ -132,7 +167,7 @@ limit(parse("1/x"), "x", "-inf")               # 0.0
 ### Numerical Differentiation
 
 ```python
-from calculus import parse, numerical_diff, numerical_diff2
+from calcus import parse, numerical_diff, numerical_diff2
 
 expr = parse("x^2")
 numerical_diff(expr, "x", 2)                   # ~4.0
@@ -145,7 +180,7 @@ numerical_diff(expr, "x", 2, method="central")
 ### Numerical Integration
 
 ```python
-from calculus import parse, trapezoidal_rule, simpsons_rule, adaptive_quadrature, gaussian_quadrature
+from calcus import parse, trapezoidal_rule, simpsons_rule, adaptive_quadrature, gaussian_quadrature
 
 expr = parse("x^2")
 
@@ -158,7 +193,7 @@ gaussian_quadrature(expr, "x", 0, 1, n=3)      # ~0.333
 ### Taylor & Maclaurin Series
 
 ```python
-from calculus import parse, taylor_series, maclaurin_series, pretty
+from calcus import parse, taylor_series, maclaurin_series, pretty
 
 # Maclaurin series (Taylor at x=0)
 series = maclaurin_series(parse("exp(x)"), "x", order=5)
@@ -174,7 +209,7 @@ series = taylor_series(parse("ln(x)"), "x", point=1, order=4)
 ### Vector Calculus
 
 ```python
-from calculus import parse, gradient, divergence, curl, laplacian
+from calcus import parse, gradient, divergence, curl, laplacian
 
 # Gradient of scalar field
 f = parse("x^2 + y^2 + z^2")
@@ -194,7 +229,7 @@ laplacian(f, ["x", "y", "z"])                 # 6
 ### ODE Solvers
 
 ```python
-from calculus import ODESolver
+from calcus import ODESolver
 
 # dy/dx = y, y(0) = 1  (solution: y = e^x)
 def f(x, y):
@@ -208,7 +243,7 @@ for x, y in result:
 ### Pretty Printing
 
 ```python
-from calculus import parse, pretty, to_latex
+from calcus import parse, pretty, to_latex
 
 expr = parse("x^2 + 2*x + 1")
 print(pretty(expr))     # x ^ 2 + 2 * x + 1
@@ -218,7 +253,7 @@ print(to_latex(expr))   # x^{2} + 2 \cdot x + 1
 ### Expression API
 
 ```python
-from calculus import parse, constant, symbol
+from calcus import parse, constant, symbol
 
 # Create expressions programmatically
 x = symbol("x")
@@ -236,33 +271,27 @@ expr.substitute("x", parse("y+1"))          # Replace x with (y+1)
 parse("x^2 + sin(y)").symbols()             # {"x", "y"}
 ```
 
-## Command-Line Interface
+### Complex Example
 
-```bash
-# Symbolic differentiation
-python -m calculus --diff "x^2 + sin(x)" --var x
+```python
+from calcus import parse, differentiate, integrate, maclaurin_series, pretty
 
-# Symbolic integration
-python -m calculus --integrate "sin(x)" --var x
+# Differentiate a complex expression
+expr = parse("exp(x) * sin(x^2) / (1 + x^2)")
+deriv = differentiate(expr, "x")
+print(pretty(deriv))
 
-# Limits
-python -m calculus --limit "sin(x)/x" --var x --point 0
-
-# Numerical integration
-python -m calculus --num-int "x^2" --var x --lower 0 --upper 1
-
-# LaTeX output
-python -m calculus --diff "x^3" --var x --latex
-
-# Interactive REPL
-python -m calculus
+# Expand sin(x) as a Maclaurin series
+series = maclaurin_series(parse("sin(x)"), "x", order=8)
+print(pretty(series))
+# x - x^3 / 6 + x^5 / 120 - x^7 / 5040
 ```
 
 ## Project Structure
 
 ```
-calculus/
-├── calculus/
+calcus/
+├── calcus/
 │   ├── __init__.py          # Public API exports
 │   ├── __main__.py          # CLI entry point
 │   ├── core/
@@ -301,7 +330,7 @@ calculus/
 ```bash
 pip install -e ".[dev]"
 pytest tests/ -v
-pytest tests/ -v --cov=calculus
+pytest tests/ -v --cov=calcus
 ```
 
 ## License

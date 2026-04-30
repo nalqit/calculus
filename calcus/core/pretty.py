@@ -56,7 +56,7 @@ def pretty(expr: Expr) -> str:
         A human-readable string representation.
 
     Examples:
-        >>> from calculus import parse, pretty
+        >>> from calcus import parse, pretty
         >>> pretty(parse("x^2 + 2*x + 1"))
         'x ^ 2 + 2 * x + 1'
     """
@@ -133,7 +133,7 @@ def to_latex(expr: Expr) -> str:
         A LaTeX string representation of the expression.
 
     Examples:
-        >>> from calculus import parse, to_latex
+        >>> from calcus import parse, to_latex
         >>> to_latex(parse("x^2 + 1"))
         'x^{2} + 1'
         >>> to_latex(parse("sin(x) / x"))

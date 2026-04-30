@@ -46,7 +46,7 @@ def integrate(expr: Expr, var: str) -> Expr:
             available rules.
 
     Examples:
-        >>> from calculus import parse, integrate, pretty
+        >>> from calcus import parse, integrate, pretty
         >>> pretty(integrate(parse("x^2"), "x"))
         'x ^ 3 / 3'
         >>> pretty(integrate(parse("sin(x)"), "x"))
@@ -76,7 +76,7 @@ def definite_integral(expr: Expr, var: str, lower: float, upper: float) -> float
         The numerical value of the definite integral.
 
     Examples:
-        >>> from calculus import parse, definite_integral
+        >>> from calcus import parse, definite_integral
         >>> abs(definite_integral(parse("x^2"), "x", 0, 1) - 1/3) < 1e-10
         True
         >>> abs(definite_integral(parse("sin(x)"), "x", 0, 3.14159265) - 2) < 1e-8
