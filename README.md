@@ -262,26 +262,30 @@ python -m calculus
 
 ```
 calculus/
-├── __init__.py          # Public API exports
-├── __main__.py          # CLI entry point
-├── core/
-│   ├── expression.py    # Expression AST nodes
-│   ├── parser.py        # Recursive descent parser
-│   ├── simplify.py      # Expression simplification
-│   └── pretty.py        # ASCII and LaTeX formatting
-├── symbolic/
-│   ├── differentiate.py # Symbolic differentiation
-│   ├── integrate.py     # Symbolic integration
-│   └── limits.py        # Limit computation
-├── numerical/
-│   ├── differentiate.py # Numerical differentiation
-│   └── integrate.py     # Numerical integration
-├── advanced/
-│   ├── series.py        # Taylor/Maclaurin series
-│   ├── ode.py           # ODE solvers
-│   └── vector.py        # Vector calculus
-└── tests/
-    └── test_calculus.py # All tests
+├── calculus/
+│   ├── __init__.py          # Public API exports
+│   ├── __main__.py          # CLI entry point
+│   ├── core/
+│   │   ├── expression.py    # Expression AST nodes
+│   │   ├── parser.py        # Recursive descent parser
+│   │   ├── simplify.py      # Expression simplification
+│   │   └── pretty.py        # ASCII and LaTeX formatting
+│   ├── symbolic/
+│   │   ├── differentiate.py # Symbolic differentiation
+│   │   ├── integrate.py     # Symbolic integration
+│   │   └── limits.py        # Limit computation
+│   ├── numerical/
+│   │   ├── differentiate.py # Numerical differentiation
+│   │   └── integrate.py     # Numerical integration
+│   └── advanced/
+│       ├── series.py        # Taylor/Maclaurin series
+│       ├── ode.py           # ODE solvers
+│       └── vector.py        # Vector calculus
+├── tests/
+│   └── test_calculus.py     # All tests
+├── pyproject.toml
+├── README.md
+└── LICENSE
 ```
 
 ## Limitations
@@ -296,8 +300,8 @@ calculus/
 
 ```bash
 pip install -e ".[dev]"
-pytest calculus/tests -v
-pytest calculus/tests -v --cov=calculus
+pytest tests/ -v
+pytest tests/ -v --cov=calculus
 ```
 
 ## License

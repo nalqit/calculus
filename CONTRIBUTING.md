@@ -69,25 +69,30 @@ ruff format .
 
 ```
 calculus/
-├── __init__.py          # Public API
-├── __main__.py          # CLI entry point
-├── core/                # Expression system
-│   ├── expression.py    # AST nodes
-│   ├── parser.py        # String → AST
-│   ├── simplify.py      # Simplification rules
-│   └── pretty.py        # Output formatting
-├── symbolic/            # Symbolic calculus
-│   ├── differentiate.py # Symbolic differentiation
-│   ├── integrate.py     # Symbolic integration
-│   └── limits.py        # Limit computation
-├── numerical/           # Numerical methods
-│   ├── differentiate.py # Finite differences
-│   └── integrate.py     # Numerical integration
-├── advanced/            # Advanced features
-│   ├── series.py        # Taylor/Maclaurin series
-│   ├── ode.py           # ODE solvers
-│   └── vector.py        # Vector calculus
-└── tests/               # Unit tests
+├── calculus/              # The Python package
+│   ├── __init__.py        # Public API
+│   ├── __main__.py        # CLI entry point
+│   ├── core/              # Expression system
+│   │   ├── expression.py  # AST nodes
+│   │   ├── parser.py      # String → AST
+│   │   ├── simplify.py    # Simplification rules
+│   │   └── pretty.py      # Output formatting
+│   ├── symbolic/          # Symbolic calculus
+│   │   ├── differentiate.py
+│   │   ├── integrate.py
+│   │   └── limits.py
+│   ├── numerical/         # Numerical methods
+│   │   ├── differentiate.py
+│   │   └── integrate.py
+│   └── advanced/          # Advanced features
+│       ├── series.py
+│       ├── ode.py
+│       └── vector.py
+├── tests/                 # Unit tests
+│   └── test_calculus.py
+├── pyproject.toml
+├── README.md
+└── LICENSE
 ```
 
 ## Naming Conventions

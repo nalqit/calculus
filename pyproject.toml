@@ -35,7 +35,7 @@ addopts = "--cov=calculus --cov-report=term-missing --cov-report=html"
 
 [tool.coverage.run]
 source = ["calculus"]
-omit = ["calculus/tests/*"]
+omit = ["tests/*"]
 
 [tool.coverage.report]
 exclude_lines = [
