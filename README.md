@@ -3,7 +3,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/calcus.svg)](https://pypi.org/project/calcus/)
 [![Python versions](https://img.shields.io/pypi/pyversions/calcus.svg)](https://pypi.org/project/calcus/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/YOUR_USERNAME/calcus/actions/workflows/tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/calcus/actions/workflows/tests.yml)
+[![Tests](https://github.com/YOUR_USERNAME/calcus/actions/workflows/tests.yml/badge.svg)](https://github.com/nalqit/calcus/actions/workflows/tests.yml)
 
 A lightweight, dependency-free Python library for symbolic and numerical calculus operations.
 
