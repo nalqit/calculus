@@ -26,7 +26,7 @@ pip install calcus
 ### From source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/calcus.git
+git clone https://github.com/nalqit/calcus.git
 cd calcus
 pip install -e .
 ```
